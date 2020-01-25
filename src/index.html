@@ -1,0 +1,285 @@
+<head>
+    <meta http-equiv="Content Type" content="text/html" charset="utf-8" />
+    <title>Cosmiq Cloud | Developing Beautiful Experiences</title>
+    <meta name="description" content="Cosmiq Cloud develops and implements beautiful immersive experiences for Virtual Reality, Augmented Reality and Web applications.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Babylon.js links-->
+    <script src="babylon/babylon.2.4.js"></script>
+    <script async src="scripts/clouds.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- Modernizr -->
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+    <!-- Shaders -->
+
+        <script type="application/vertexShader" id="vertexShaderCode">
+        #ifdef GL_ES
+        precision highp float;
+        #endif
+
+        // Attributes
+        attribute vec3 position;
+        attribute vec2 uv;
+
+        // Uniforms
+        uniform mat4 worldViewProjection;
+
+        // Normal
+        varying vec2 vUV;
+
+        void main(void) {
+            gl_Position = worldViewProjection * vec4(position, 1.0); vUV = uv;
+        }
+    </script>
+
+    <script type="application/fragmentShader" id="fragmentShaderCode">
+        #ifdef GL_ES
+        precision highp float;
+        #endif
+
+        varying vec2 vUV;
+        uniform vec3 fogColor;
+        uniform float fogNear;
+        uniform float fogFar; // Refs
+        uniform sampler2D textureSampler;
+
+        void main(void) {
+          float depth = gl_FragCoord.z / gl_FragCoord.w;
+          float fogFactor = smoothstep(fogNear, fogFar, depth);
+          gl_FragColor = texture2D(textureSampler, vUV);
+          gl_FragColor.w *= pow(abs(gl_FragCoord.z), 20.0);
+          gl_FragColor = mix(gl_FragColor, vec4(fogColor, gl_FragColor.w), fogFactor);
+        }
+    </script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="css/cosmiq.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css">
+    <!-- end styles -->
+
+</head>
+<body>
+
+  <!--Loading screen area-->
+  <div class="loadpage">
+    <div id="cclogo">
+      <img src="img/cosmiq.png" />
+      <div id="loadcontent">Loading content...</div>
+    </div>
+  </div><!--end Loading screen area-->
+
+    <!--Navigation area-->
+    <div id="nav">
+        <div id="main-nav">
+            <ul>
+                <a href="#content"><li>About</li></a>
+                <a href="#portfolio"><li>Web Development</li></a>
+                <a href="#space"><li>Space Art</li></a>
+                <a href="#photo"><li>Photography</li></a>
+                <a href="#graphic"><li>Graphic Art</li></a>
+                <a href="#contact"><li>Contact</li></a>
+            </ul>
+        </div>
+        <div id="mobile-nav">
+          <i class="fa fa-bars" aria-hidden="true" fa-2x></i>
+        </div>
+        <div id="hidden-nav">
+          <ul>
+            <a href="#content"><li>About</li></a>
+            <a href="#portfolio"><li>Web Development</li></a>
+            <a href="#space"><li>Space Art</li></a>
+            <a href="#photo"><li>Photography</li></a>
+            <a href="#graphic"><li>Graphic Art</li></a>
+            <a href="#contact"><li>Contact</li></a>
+          </ul>
+        </div>
+    </div><!--end Navigation-->
+
+    <!--Hero area and logo -->
+    <div class="container">
+            <div id="logo">
+                    <img src="img/cosmiq.png" />
+                    <hr class="rule" />
+                    <div class="text">Developing Beautiful Experiences</div>
+            </div>
+    </div>
+    <canvas id="cloudCanvas"></canvas><!-- end Hero area-->
+
+    <!--About Me content-->
+    <div id="content">
+        <h1>About Me</h1>
+        <hr />
+        <p>My name is Vincent Moore. I am a web developer specializing in web animation, WebGL and back-end applications with PHP and Node.js.</p><br />
+        <p>I am also an astronomical artist, photographer and 3D artist. Take a look at my portfolio and check out some of my work.</p>
+    </div><!-- end About Me-->
+
+    <!--Portfolio-->
+    <div id="portfolio">
+        <h1>Web Development</h1>
+        <hr />
+        <p>I have been fascinated by web design and development since college. I feel the best way to create is to constantly explore cutting-edge concepts and push the envelope as much as possible.</p>
+        <p>Note: Examples open in a new window.</p>
+        <div><br /><br /><br /></div>
+        <div class="wrapper">
+        <div id="cell">
+            <a href="projects/paint/" target="_blank"><img src="img/web/paint.png"></a>
+          </div>
+          <div id="cell">
+            <a href="projects/drake/" target="_blank"><img src="img/web/drake.png"></a>
+          </div>
+          <div id="cell">
+            <a href="projects/indyjs/" target="_blank"><img src="img/web/indyjs.png"></a>
+          </div>
+          <div id="cell">
+            <a href="projects/loan/" target="_blank"><img src="img/web/loan.png"></a>
+          </div>
+          <div id="cell">
+            <a href="http://kilakane.com" target="_blank"><img src="img/web/kilakane.png"></a>
+          </div>
+          <div id="cell">
+            <a href="https://cosmiqweb.herokuapp.com/" target="_blank"><img src="img/web/bed_web.png"></a>
+          </div>
+          <div id="cell">
+            <a href="projects/sphere/" target="_blank"><img src="img/web/spheres.png"></a>
+          </div>
+          <div id="cell">
+            <a href="projects/helloorbs/" target="_blank"><img src="img/web/orbs.png"></a>
+          </div>
+          <div class="clearfix"></div>
+    </div><!--end Portfoilo-->
+
+    <!--Space Art-->
+    <div id="space">
+        <h1>Space Art</h1>
+        <hr />
+        <p>I have loved astronomy since I was a child. Since it is unlikely that I will ever be an astronaut at this point in my life, I express my love for the last frontier through art.</p>
+        <div><br /><br /><br /></div>
+        <div class="wrapper">
+          <div id="cell">
+            <a href="spaceart/planet.png" data-fancybox="space" data-caption="Alien World and its moon"><img src="img/space/planet.png"></a>
+          </div>
+          <div id="cell">
+            <a href="spaceart/twins.jpg" data-fancybox="space" data-caption="Twin suns over the cloud tops"><img src="img/space/twins.png"></a>
+          </div>
+          <div id="cell">
+            <a href="spaceart/alienmoon.jpg" data-fancybox="space" data-caption="Rise of the companion"><img src="img/space/alienmoon.png"></a>
+          </div>
+          <div id="cell">
+            <a href="spaceart/earthmoon.png" data-fancybox="space" data-caption="The Homeworld"><img src="img/space/earthmoon.png"></a>
+          </div>
+          <div class="clearfix"></div>
+    </div><!--end Space Art-->
+
+    <!--Photography-->
+    <div id="photo">
+        <h1>Photography</h1>
+        <hr />
+        <p>My continued growth in web development and 3D art has always been influenced by photography. I have spent quite a bit of time learning photographic fundamentals to enhance my work.</p>
+        <div><br /><br /><br /></div>
+        <div class="wrapper">
+          <div id="cell">
+            <a href="photography/waterfall.jpg" data-fancybox="photo" data-caption="Waterfall at Chicago Botanic Garden"><img src="img/photo/waterfall.png"></a>
+          </div>
+          <div id="cell">
+            <a href="photography/flower.jpg" data-fancybox="photo" data-caption="Beautiful flower"><img src="img/photo/flower.png"></a>
+          </div>
+          <div id="cell">
+            <a href="photography/bubbles.jpg" data-fancybox="photo" data-caption="Blowing bubbles"><img src="img/photo/bubbles.png"></a>
+          </div>
+          <div id="cell">
+            <a href="photography/evanston.jpg" data-fancybox="photo" data-caption="Chicago Ave and Main Ave in Evanston, Illinois"><img src="img/photo/evanston.png"></a>
+          </div>
+          <div id="cell">
+            <a href="photography/realestate.jpg" data-fancybox="photo" data-caption="Overlooking downtown Chicago"><img src="img/photo/realestate.png"></a>
+          </div>
+          <div id="cell">
+            <a href="photography/japanesegarden.jpg" data-fancybox="photo" data-caption="Chicago Botanic Garden"><img src="img/photo/japanesegarden.png"></a>
+          </div>
+          <div id="cell">
+            <a href="photography/wacker.jpg" data-fancybox="photo" data-caption="Wacker St"><img src="img/photo/chicago.png"></a>
+          </div>
+          <div id="cell">
+            <a href="photography/light.jpg" data-fancybox="photo" data-caption="Clouds"><img src="img/photo/clouds.png"></a>
+          </div>
+          <div class="clearfix"></div>
+    </div><!--end Photography-->
+
+    <!--Photography-->
+    <div id="graphic">
+        <h1>Graphic and 3D Design</h1>
+        <hr />
+        <p>The most fascinating aspect of 3D graphics for me is the ability to build any world you can imagine inside of a computer screen.</p>
+        <div><br /><br /><br /></div>
+        <div class="wrapper">
+          <div id="cell">
+            <a href="graphics/kitchen.jpg" data-fancybox="graphics" data-caption="3D render built with Blender"><img src="img/graphic/kitchen.png"></a>
+          </div>
+          <div id="cell">
+            <a href="graphics/bedroom.jpg" data-fancybox="graphics" data-caption="3D render built with Blender"><img src="img/graphic/bedroom.png"></a>
+          </div>
+          <div id="cell">
+            <a href="graphics/wine.jpeg" data-fancybox="graphics" data-caption="3D render built with Blender"><img src="img/graphic/wine.png"></a>
+          </div>
+          <div id="cell">
+            <a href="graphics/cupcake.jpeg" data-fancybox="graphics" data-caption="3D render built with Blender"><img src="img/graphic/cupcake.png"></a>
+          </div>
+          <div id="cell">
+            <a href="graphics/bigroom.jpg" data-fancybox="graphics" data-caption="3D render built with Blender"><img src="img/graphic/bigroom.png"></a>
+          </div>
+          <div id="cell">
+            <a href="graphics/rocks.png" data-fancybox="graphics" data-caption="Game assets built with Blender"><img src="img/graphic/rocks.png"></a>
+          </div>
+          <div id="cell">
+            <a href="graphics/lightsphere.jpeg" data-fancybox="graphics" data-caption="Logo built with Adobe Illustrator"><img src="img/graphic/lightsphere.png"></a>
+          </div>
+          <div id="cell">
+            <a href="graphics/kiwi.jpeg" data-fancybox="graphics" data-caption="Logo built with Adobe Illustrator"><img src="img/graphic/kiwi.png"><a/>
+          </div>
+          <div class="clearfix"></div>
+    </div><!--end Photography-->
+
+    <!-- Contact -->
+    <div id="contact">
+        <h1>Contact Me</h1>
+        <hr />
+
+        <!-- Contact email begins -->
+          <form class ="form-style-8" action="scripts/email.php" method="POST">
+            <input type="text" name="full_name" placeholder="Your Full Name">
+            <input type="email" name="email" placeholder="Your Email Address">
+            <textarea id="message" placeholder="What's on your mind?"></textarea><br />
+            <input type="submit" value="Send">
+          </form>
+      </div><!-- end email form -->
+
+    <!--Footer-->
+    <footer id="footer">
+        <p>&copy; <span id="date"></span> Cosmiq Cloud. All Rights Reserved. Designed by Vincent Moore.
+          <script>
+            var d = new Date();
+            document.getElementById("date").innerHTML = d.getFullYear();
+          </script>
+        </p>
+    </footer><!--end Footer-->
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+    </script>
+    <script src="scripts/cosmiq.js"></script>
+    <script src="scripts/jquery.fancybox.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $( ".loadpage" ).delay(8000).fadeOut(7000);
+        $("#nav").fadeIn(7000);
+      });
+    </script>
+
+    <!-- Font Awesome Icons and other scripts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<script src="scripts/scroll.js"></script>-->
+</body>
+</html>

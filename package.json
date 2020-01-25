@@ -1,0 +1,14 @@
+{
+  "name": "cosmiq",
+  "version": "1.0.0",
+  "description": "Cosmiq Cloud Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Vincent Moore",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

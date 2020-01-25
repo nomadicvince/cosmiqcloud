@@ -1,0 +1,65 @@
+html, body {
+    margin: 0;
+    padding:0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: #000;
+    overflow: hidden;
+    min-width: 664px;
+  }
+  
+  /* unvisited link */
+  a:link {
+    color: #4accff;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #fa5d0f;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #aadffa;
+  }
+  
+  /* selected link */
+  a:active {
+    color: #ff7d4a;
+  }
+  
+  /* canvas styles */
+  #renderCanvas {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+    z-index: 0;
+  }
+  
+  #content {
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.0);
+    line-height: 0em;
+    padding-bottom: 2.4em;
+  }
+  
+  #blurb {
+    width: 260px;
+    height: auto;
+    margin-left: 3em;
+  }
+  
+  #blurb h3 {
+    font-kerning: normal;
+    font-size: 1.4em;
+    letter-spacing: 0.3em;
+    font-weight: 200;
+  }
+  
+  
