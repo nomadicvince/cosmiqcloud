@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+    <title>Drake Equation Calculator</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/jsform8.css">
+</head>
+<body>
+    <div class="form-style-8">
+      <h2>Drake Equation Calculator (Vanilla JavaScript)</h2>
+      <p>Enter values to solve the equation.</p>
+      <form id="equation">
+        <input type="text" id="R" name="field1" value="" placeholder="R* - Annual formation rate of suitable stars in the Milky Way" />
+        <span id="r_error"></span>
+        <input type="text" id="Fp" name="field2" value="" max="100" placeholder="Fp - Percentage of stars that have planets" />
+        <span id="fp_error"></span>
+        <input type="text" id="Ne" name="field3" value="" placeholder="Ne - Number of planets per star that can support life" />
+        <span id="ne_error"></span>
+        <input type="text" id="Fl" name="field3"  value=""placeholder="Fl - Percentage of planets where life emerges" />
+        <span id="fl_error"></span>
+        <input type="text" id="Fi" name="field3" value="" placeholder="Fi - Percentage of planets where intelligent life evolves" />
+        <span id="fi_error"></span>
+        <input type="text" id="Fc" name="field3" value="" placeholder="Fc - Percentage of civilizations that will develop communication" />
+        <span id="fc_error"></span>
+        <input type="text" id="L" name="field3" value="" placeholder="L - Years a civilization will last" />
+        <span id="L_error"></span>
+        <input type="submit" value="Calculate" />
+      </form>
+      <p id="result"><span id="calculate"><span></p>
+        <p><a href="../index.html">Home</a></p>
+        <script src="js/drake.js"></script>
+    </div>
+</body>
+</html>

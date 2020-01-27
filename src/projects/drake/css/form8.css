@@ -1,0 +1,130 @@
+html, body {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    background: url("../images/earthmoon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  @font-face {
+      font-family: 'hattori_hanzolight';
+      src: url('../fonts/Hattori_Hanzo-webfont.eot');
+      src: url('../fonts/Hattori_Hanzo-webfont.eot?#iefix') format('embedded-opentype'),
+           url('../fonts/Hattori_Hanzo-webfont.woff') format('woff'),
+           url('../fonts/Hattori_Hanzo-webfont.ttf') format('truetype'),
+           url('../fonts/Hattori_Hanzo-webfont.svg#hattori_hanzolight') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+  
+  .form-style-8{
+      font-family: 'hattori_hanzolight';
+      width: 65%;
+      padding: 30px;
+      margin: 50px auto;
+      border-radius: 6px;
+      background: rgba(255, 255,255, 0.7);
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+      -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+      -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+  
+  }
+  .form-style-8 h2{
+      font-family: 'hattori_hanzolight';
+      font-size: 35px;
+      font-weight: bold;
+      padding: 20px;
+      margin: -30px -30px 30px -30px;
+  }
+  .form-style-8 input[type="text"],
+  .form-style-8 input[type="date"],
+  .form-style-8 input[type="datetime"],
+  .form-style-8 input[type="email"],
+  .form-style-8 input[type="number"],
+  .form-style-8 input[type="search"],
+  .form-style-8 input[type="time"],
+  .form-style-8 input[type="url"],
+  .form-style-8 input[type="password"],
+  .form-style-8 textarea,
+  .form-style-8 select
+  {
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      display: block;
+      width: 100%;
+      padding: 7px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      background: rgba(255, 255, 255, 0.9);
+      margin-bottom: 10px;
+      font: 16px Arial, Helvetica, sans-serif;
+      height: 45px;
+  }
+  .form-style-8 textarea{
+      resize:none;
+      overflow: hidden;
+  }
+  .form-style-8 input[type="button"],
+  .form-style-8 input[type="submit"]{
+      -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+      -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+      box-shadow: inset 0px 1px 0px 0px #45D6D6;
+      background-color: #2CBBBB;
+      border: 1px solid #27A0A0;
+      display: inline-block;
+      cursor: pointer;
+      color: #FFFFFF;
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 14px;
+      padding: 8px 18px;
+      text-decoration: none;
+      text-transform: uppercase;
+  }
+  .form-style-8 input[type="button"]:hover,
+  .form-style-8 input[type="submit"]:hover {
+      background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+      background-color:#34CACA;
+  }
+  
+  #equation {
+    font-size: 31px;
+    font-weight: bold;
+  }
+  
+  #variables {
+    font-size: 19px;
+    font-weight: 500;
+  }
+  
+  #tables {
+      display: block;
+      margin-left: 50px;
+      border-collapse: collapse;
+      width: 100%;
+  }
+  
+  #tables td, #tables th {
+      padding: 8px;
+  }
+  
+  #tables tr {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+  }
+  
+  #tables img {
+    margin: auto;
+    width: 90%;
+    padding: 0px auto;
+  }
+  
+  #porto {
+    width: 10%;
+  }
+  
