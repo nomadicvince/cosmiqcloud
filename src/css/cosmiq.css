@@ -305,7 +305,32 @@
             opacity: 0;
              animation: 3s ease-in 22s 1 forwards experience;
           }
-          
+
+
+        
+          .words {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 44%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+          }
+        
+          .title {
+            font-size: 24px;
+            font-weight: bold;
+          }
+        
+          .built {
+            font-size: 15px;
+          }
+
+        /* Overlay styles */
+
           @keyframes drama {
             0%   {
               opacity: 0;
@@ -344,6 +369,8 @@
              width: 40%;
             }
           }
+
+    
 
         #thankslogo {
             margin: 120px auto;
@@ -665,17 +692,32 @@
           }
 
          .wrapper {
+             position: relative;
             width: 100%;
             height: auto;
             column-gap: 0px;
          }
 
+         .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #008CBA;
+          }
+          
         #cell {
             float: left;
             width: 50%;
             height: auto;
             padding-bottom: 0px;
          }
+
 
          #cell img {
              width: 100%;
@@ -685,7 +727,7 @@
           }
 
           #cell img:hover {
-            opacity: 0.4;
+            opacity: 0.9;
             transition: ease-out 1s;
           }
 
