@@ -304,30 +304,8 @@
             font-kerning: 300;
             opacity: 0;
              animation: 3s ease-in 22s 1 forwards experience;
-          }
+          }       
 
-
-        
-          .words {
-            color: white;
-            font-size: 20px;
-            position: absolute;
-            top: 44%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            text-align: center;
-          }
-        
-          .title {
-            font-size: 24px;
-            font-weight: bold;
-          }
-        
-          .built {
-            font-size: 15px;
-          }
 
         /* Overlay styles */
 
@@ -692,30 +670,38 @@
           }
 
          .wrapper {
-             position: relative;
+            position: relative;
             width: 100%;
             height: auto;
             column-gap: 0px;
          }
 
-         .overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            opacity: 0;
-            transition: .5s ease;
-            background-color: #008CBA;
+         .describe {
+             position: absolute;
+             font-size: 25px;
+             margin-top: 140px;
+             margin-left: 15%;
+             display: block;
+             text-align: center;
+             z-index: 3;
+         }
+
+       
+          .title {
+            font-size: 40px;
+            font-weight: bold;
           }
-          
+        
+          .built {
+            font-size: 15px;
+          }
+         
         #cell {
             float: left;
             width: 50%;
             height: auto;
             padding-bottom: 0px;
+            z-index: 2;
          }
 
 
