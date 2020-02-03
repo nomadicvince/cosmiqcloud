@@ -678,13 +678,36 @@
 
          .describe {
              position: absolute;
+             width: 50%;
              font-size: 25px;
-             margin-top: 140px;
-             margin-left: 15%;
+             margin: 140px auto;
              display: block;
              text-align: center;
              z-index: 3;
+             opacity: 0;
+             transition: .9s ease-in-out;
          }
+
+         .describe_black {
+            position: absolute;
+            width: 50%;
+            color: #000;
+            font-size: 25px;
+            margin: 140px auto;
+            display: block;
+            text-align: center;
+            z-index: 3;
+            opacity: 0;
+            transition: .9s ease-in-out;
+        }
+
+         #cell:hover .describe {
+             opacity: 1;
+         }
+
+         #cell:hover .describe_black {
+            opacity: 1;
+        }
 
        
           .title {
@@ -712,8 +735,8 @@
              cursor: pointer;
           }
 
-          #cell img:hover {
-            opacity: 0.9;
+          #cell:hover img{
+            opacity: 0.2;
             transition: ease-out 1s;
           }
 
