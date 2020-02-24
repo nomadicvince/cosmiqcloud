@@ -688,6 +688,21 @@
              transition: .9s ease-in-out;
          }
 
+         .describe a:link {
+            text-decoration: underline;
+            color: #fff;
+            transition: .9s ease-in-out;
+        }
+
+        .describe a:visited {
+           color: #fff;
+       }
+
+       .describe a:hover {
+            color: rgba(22,207,142,1);
+            transition: .9s ease-in-out;
+       }
+
          .describe_black {
             position: absolute;
             width: 50%;
@@ -700,6 +715,21 @@
             opacity: 0;
             transition: .9s ease-in-out;
         }
+
+        .describe_black a:link {
+            text-decoration: underline;
+            color: #000;
+            transition: .9s ease-in-out;
+        }
+
+        .describe_black a:visited {
+           color: #000;
+       }
+
+       .describe_black a:hover {
+            color: rgba(22,207,142,1);
+            transition: .9s ease-in-out;
+       }
 
          #cell:hover .describe {
              opacity: 1;
