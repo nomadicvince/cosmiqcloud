@@ -979,6 +979,24 @@
              #cloudlogo > img {
                width: 40%;
              }
+
+             .describe {
+                font-size: 10px;            
+                margin: 100px auto;
+            }  
+            
+            .describe_black {
+                font-size: 10px;            
+                margin: 100px auto;
+            }    
+            
+            .title {
+                font-size: 20px;
+                font-weight: bold;
+              }
+            
+
+
           }
 
           @media only screen and (max-width: 500px) {
@@ -1067,6 +1085,20 @@
 
               #contact p {
                   font-size: 16px;
+              }
+
+              .describe {
+                width: 100%;
+                font-size: 18px; 
+            }  
+
+            .describe_black {
+                width: 100%;
+                font-size: 18px; 
+            }  
+            
+            .title {
+                font-size: 28px;
               }
 
 
