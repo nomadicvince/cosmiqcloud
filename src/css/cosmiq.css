@@ -65,7 +65,7 @@
              padding: 0;
              transition: .3;
              font-family: 'hattori_hanzolight';
-             min-width: 250px;
+             min-width: 400px;
          }
 
          /* Load page */
@@ -200,6 +200,7 @@
          #hidden-nav {
              display: none;
          }
+
 
          /*  Logo Styles  */
 
@@ -942,10 +943,11 @@
              }
 
              #logo > img {
-                 height: 100%;
+                 height: auto;
                  padding: 4px 18px;
                  /* firefox bug fix */
                  width: 45%;
+                 display: block;
              }
 
              #hero {
@@ -1002,9 +1004,10 @@
           @media only screen and (max-width: 500px) {
 
               #logo > img {
-                  height: 100%;
+                  height: auto;
                   padding: 4px 4px;
-                  width: 75%;
+                  width: 60%;
+                  display: block;
               }
 
               #cloudlogo > img {
@@ -1017,7 +1020,7 @@
               }
 
               #cclogo > img {
-                  height: 100%;
+                  height: auto;
                   padding: 4px 4px;
                   /* firefox bug fix */
                   width: 40%;
